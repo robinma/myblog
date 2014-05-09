@@ -5,6 +5,8 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+var initDB=require('./model/initConnect');
+
 var index = require('./routes/index');
 var users = require('./routes/users');
 
@@ -55,5 +57,17 @@ app.use(function(err, req, res, next) {
     });
 });
 
+
+initDB.connect(function(error){
+	console.log('start',error);
+	if(error) throw error;
+})
+
+app.on('close',function(errno){
+	initDB.disconnect(function(err){
+		console.log('===',err);
+		
+	});
+});
 
 module.exports = app;
