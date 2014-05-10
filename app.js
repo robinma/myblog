@@ -9,6 +9,7 @@ var initDB=require('./model/initConnect');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
+//var blogs=require('./routes/blogs');
 
 var app = express();
 
@@ -22,9 +23,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'static')));
-
+//后期进行整理
 app.use('/', index);
 app.use('/users', users);
+//app.use('/blogs/',blogs);
 
 /// catch 404 and forwarding to error handler
 app.use(function(req, res, next) {
