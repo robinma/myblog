@@ -1,1 +1,252 @@
-div hello word
+extends layout
+block css
+  link(href='/css/blog/main.css', type='text/css', rel='stylesheet')
+block content
+  div.containor
+    header.header
+      div.header_cont.wwid
+        div.hb_name
+          h1.name.font-f  风的沙子 
+          span.slogan
+            b 技术交流
+            b 分享思想
+        div.hd_search_warp
+          div.hd_search
+            a.sear_btn(href='')
+              | 搜索
+              span.bicon.bicon_search
+            input.hd_search_inp(type='text', name='searchKey', placeholder='请输入关键字')
+    nav.main_nav
+      div.mainnav_inn.wwid
+        ul.mainMenu
+          li.it
+            a.li(href='')
+              span.font-f.txt HOME
+          li.it
+            a.li(href='')
+              span.font-f.txt 前端技术
+          li.it
+            a.li(href='')
+              span.font-f.txt 后端技术
+          li.it
+            a.li(href='')
+              span.font-f.txt myLib
+          li.it
+            a.li(href='')
+              span.font-f.txt about me
+    div.main_content
+      div.main_content_inn.clearfix.wwid
+        section.main_section
+          article.main_scrollImg.clearfix
+            div.mainsi_img
+              a.warp(href='')
+                img(src='http://image.xinli001.com/20130806/145149c0c7a739588ff2f0.jpg!300x200', width='300', height='200')
+            section.mainsi_content
+              h3.mainsi_title
+                a.tit(href='') 除了爱情，还要有自己
+              article.mainsi_artc
+                p
+                  | 压力若不及时排除，越积越多的失落、郁闷、愤怒最终会像火山爆发一样喷薄而出。每天释放一点压力，生活会更加轻松。
+                  span.tail  (2357人路过)
+              div.mainsi_pagewarp
+                a.it.bicon.active(href='', data-val='')
+                a.it.bicon(href='', data-val='')
+                a.it.bicon(href='', data-val='')
+                a.it.bicon(href='', data-val='')
+                a.it.bicon(href='', data-val='')
+                a.it.bicon(href='', data-val='')
+          div.m_artic_warp
+            div.mart_bar
+              h2.mart_title 最新博文...
+            div.mart_article.clearfix
+              div.mart_it
+                h3.title
+                  a.li.font-f(href='') 给项目写了个简单的打包工具。。
+                div.mart_info
+                  span.mart_field.fl
+                    em.bicon.bicon_article
+                    | 作者：admin
+                  span.mart_field.fl 发表时间：2012年6月22日
+                  span.mart_field.fr
+                    em.bicon.bicon_person
+                    | 245次阅读
+                  span.mart_field.fr
+                    em.bicon.bicon_view
+                    | 1条评论
+                article.mart_art_cont.mart_art1
+                  div.mart_fimgwarp
+                    div.mart_fimg
+                      | sdsdf
+                  div.mart_scont
+                    p 在想，家里如果以后能大修一次的话，一定要放布置一堵照片墙，哇塞，超好看~~~ (⊙o⊙)
+                    p 说到照片就想到photo gallery，把照片放到网上，再用些小技术，呈现出不一样的精彩。O(∩_∩)O
+              div.mart_it
+                h3.title
+                  a.li.font-f(href='') 给项目写了个简单的打包工具。。
+                div.mart_info
+                  span.mart_field.fl
+                    em.bicon.bicon_article
+                    | 作者：admin
+                  span.mart_field.fl 发表时间：2012年6月22日
+                  span.mart_field.fr
+                    em.bicon.bicon_person
+                    | 245次阅读
+                  span.mart_field.fr
+                    em.bicon.bicon_view
+                    | 1条评论
+                article.mart_art_cont.mart_art2
+                  div.mart_fimgwarp
+                    div.mart_fimg
+                      | sdsdf
+                  div.mart_scont
+                    p 在想，家里如果以后能大修一次的话，一定要放布置一堵照片墙，哇塞，超好看~~~ (⊙o⊙)
+                    p 说到照片就想到photo gallery，把照片放到网上，再用些小技术，呈现出不一样的精彩。O(∩_∩)O
+                    a(href='') www.baidu.com
+              div.mart_it
+                h3.title
+                  a.li.font-f(href='') 给项目写了个简单的打包工具。。
+                div.mart_info
+                  span.mart_field.fl
+                    em.bicon.bicon_article
+                    | 作者：admin
+                  span.mart_field.fl 发表时间：2012年6月22日
+                  span.mart_field.fr
+                    em.bicon.bicon_person
+                    | 245次阅读
+                  span.mart_field.fr
+                    em.bicon.bicon_view
+                    | 1条评论
+                article.mart_art_cont.mart_art2
+                  div.mart_fimgwarp
+                    div.mart_fimg
+                      | sdsdf
+                  div.mart_scont
+                    p 在想，家里如果以后能大修一次的话，一定要放布置一堵照片墙，哇塞，超好看~~~ (⊙o⊙)
+                    p 说到照片就想到photo gallery，把照片放到网上，再用些小技术，呈现出不一样的精彩。O(∩_∩)O
+                    a(href='') www.baidu.com
+            section.pagewarp
+              a.page_it(href='') 上一页
+              a.page_it(href='') 1
+              a.page_it(href='') 2
+              a.page_it(href='') 3
+              a.page_it(href='') 4
+              a.page_it(href='') 5
+              a.page_it(href='') 6
+              a.page_it(href='') 7
+              a.page_it(href='') 下一页
+        aside.main_aside
+          section.masi_block
+            div.mart_bar
+              h2.mart_title 最新博文...
+            div.cloudMark
+              | adsfs
+          section.masi_block
+            div.mart_bar
+              h2.mart_title 更新文章...
+            div.masi_arilist
+              ul.marsi_ariul
+                li.it
+                  h4.tit
+                    a.tit_li.font-f(href='')
+                      | pngfix.js可能导致xss攻击IE中iframe和
+                  div.status
+                    span.count 23
+                    span.clas 作业试验
+                    span.wtime 13/8/18
+                li.it
+                  h4.tit
+                    a.tit_li.font-f(href='')
+                      | pngfix.js可能导致xss攻击IE中iframe和
+                  div.status
+                    span.count 23
+                    span.clas 作业试验
+                    span.wtime 13/8/18
+                li.it
+                  h4.tit
+                    a.tit_li.font-f(href='')
+                      | pngfix.js可能导致xss攻击IE中iframe和
+                  div.status
+                    span.count 23
+                    span.clas 作业试验
+                    span.wtime 13/8/18
+                li.it
+                  h4.tit
+                    a.tit_li.font-f(href='')
+                      | pngfix.js可能导致xss攻击IE中iframe和
+                  div.status
+                    span.count 23
+                    span.clas 作业试验
+                    span.wtime 13/8/18
+                li.it
+                  h4.tit
+                    a.tit_li.font-f(href='')
+                      | pngfix.js可能导致xss攻击IE中iframe和
+                  div.status
+                    span.count 23
+                    span.clas 作业试验
+                    span.wtime 13/8/18
+          section.masi_block
+            div
+              img(src='http://image.xinli001.com/20130808/094217699c2088dab9e932.jpg', width='280', height='190')
+          section.masi_block
+            div.mart_bar
+              h2.mart_title 近期评论...
+            div.masi_arilist
+              ul.marsi_ariul.marsi_commul
+                li.it
+                  h4.tit
+                    a.tit_li.font-f(href='')
+                      | 三清水
+                    span.wtime 13/8/18
+                  div.article
+                    | 这个不错啊，一天就做出来了。高人就是厉害,嘿嘿，不错，继续努力
+                li.it
+                  h4.tit
+                    a.tit_li.font-f(href='')
+                      | 三清水
+                    span.wtime 13/8/18
+                  div.article
+                    | 这个不错啊，一天就做出来了。高人就是厉害,嘿嘿，不错，继续努力
+                li.it
+                  h4.tit
+                    a.tit_li.font-f(href='')
+                      | 三清水
+                    span.wtime 13/8/18
+                  div.article
+                    | 这个不错啊，一天就做出来了。高人就是厉害,嘿嘿，不错，继续努力
+                li.it
+                  h4.tit
+                    a.tit_li.font-f(href='')
+                      | 三清水
+                    span.wtime 13/8/18
+                  div.article
+                    | 这个不错啊，一天就做出来了。高人就是厉害,嘿嘿，不错，继续努力
+                li.it
+                  h4.tit
+                    a.tit_li.font-f(href='')
+                      | 三清水
+                    span.wtime 13/8/18
+                  div.article
+                    | 这个不错啊，一天就做出来了。高人就是厉害,嘿嘿，不错，继续努力
+          section.masi_block
+            div.mart_bar
+              h2.mart_title 友情连接...
+            ul.marsi_ariul.marsi_conec
+              li.it
+                h4.tit
+                  a.tit_li.font-f(href='')
+                    | 三清水
+              li.it
+                h4.tit
+                  a.tit_li.font-f(href='')
+                    | mofei 的个人空间
+              li.it
+                h4.tit
+                  a.tit_li.font-f(href='')
+                    | lay的个人空间
+              li.it
+                h4.tit
+                  a.tit_li.font-f(href='')
+                    | 三清水
+
+block foot

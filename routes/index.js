@@ -7,7 +7,7 @@ router.get('/', function(req, res) {
 });
 
 router.get('/test',function(req,res){
-	res.render('foot',{})
+	res.render('error',{})
 })
 
 

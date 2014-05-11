@@ -6,10 +6,11 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var initDB=require('./model/initConnect');
-
+/*require router modules*/
 var index = require('./routes/index');
 var users = require('./routes/users');
-//var blogs=require('./routes/blogs');
+var blogs=require('./routes/blogs');
+var admin=require('./routes/admin')
 
 var app = express();
 
@@ -24,9 +25,11 @@ app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'static')));
 //后期进行整理
+//set main router enter
 app.use('/', index);
 app.use('/users', users);
-//app.use('/blogs/',blogs);
+app.use('/blogs/',blogs);
+app.use('/admin/',admin);
 
 /// catch 404 and forwarding to error handler
 app.use(function(req, res, next) {
