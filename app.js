@@ -63,16 +63,16 @@ app.use(function(err, req, res, next) {
 });
 
 
-initDB.connect(function(error){
-	console.log('start',error);
-	if(error) throw error;
-})
+// initDB.connect(function(error){
+// 	console.log('start',error);
+// 	if(error) throw error;
+// })
 
-app.on('close',function(errno){
-	initDB.disconnect(function(err){
-		console.log('===',err);
+// app.on('close',function(errno){
+// 	initDB.disconnect(function(err){
+// 		console.log('===',err);
 		
-	});
-});
+// 	});
+// });
 
 module.exports = app;
