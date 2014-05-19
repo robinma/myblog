@@ -1,4 +1,11 @@
 
+@font-face {
+    font-family: 'FontAwesome';
+    src: url('../image/fontawesome-webfont.eot');
+    src: url('../image/fontawesome-webfont.eot') format('embedded-opentype'),url('../image/fontawesome-webfont.woff') format('woff'),url('../image/fontawesome-webfont.ttf') format('truetype'),url('../image/fontawesome-webfont.svg#fontawesomeregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
 body{background-color: #3d3d3d; padding: 0;margin: 0;font-size: 13px;direction: ltr;color: #000;}
 
 .page-container{margin-top:50px;}
@@ -6,5 +13,7 @@ body{background-color: #3d3d3d; padding: 0;margin: 0;font-size: 13px;direction: 
 .page-sidebar{width: 225px; background-color: #3d3d3d;}
 ul.page-sidebar-menu>li>a{border-top:1px solid #5c5c5c;color: #fff;display: block;position: relative;padding: 10px 5px;text-decoration: none;font-size: 14px;font-weight: 300;}
 ul.page-sidebar-menu>li:hover>a{ background-color: #333;}
-ul.page-sidebar-menu>li>a>i{font-size: 14px;margin-right: 5px;text-shadow:none;}
-ul.page-sidebar-menu>li>a>span.arrow:before{color: #7d7d7d;float: right;margin-top: 1px;margin-right: 5px;display: inline;font-size: 16px;font-family: FontAwesome;height: auto;content: "\f104";font-weight: 300;}
+ul.page-sidebar-menu>li>a>i{font-size: 14px;margin-right: 5px;text-shadow:none;line-height: 14px;}
+ul.page-sidebar-menu>li>a>span.title{line-height: 14px;display: inline-block;}
+ul.page-sidebar-menu>li>a>span.arrow:before{color: #7d7d7d;float: right;margin-top: 1px;margin-right: 5px;display: inline;font-size: 16px;font-family: 'FontAwesome';height: auto;content: "\f104";font-weight: 300;}
+ul.page-sidebar-menu>li.active>a{background: #e02222 !important; border-top-color:rgba(0,0,0,0) !important;}
