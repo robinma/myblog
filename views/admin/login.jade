@@ -1,0 +1,26 @@
+extends layout
+block css
+  link(rel="stylesheet", type="text/css", href="/css/admin/login.css")
+block content
+  div.logo
+    span 风的沙子--管理登录
+  div.content
+    form.form-horizontal(role="form")
+      h3.text-center.font-title 登录后台管理
+      div.alert.alert-danger.hide
+        p 输入用户密码有错，请重新输入
+      div.controls
+        div.input-group
+          span.input-group-addon.fa-user
+          input(type="text" class="form-control m-form-up" placeholder="username")
+        div.input-group
+          span.input-group-addon.fa-lock
+          input(type="password" class="form-control" placeholder="password")
+        div.form-actions
+          div.checkbox
+            label
+              input(type="checkbox")
+              span 记住密码?
+          button(type="submit" class="btn btn-success pull-right") 登录
+
+

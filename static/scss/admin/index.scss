@@ -6,10 +6,11 @@
 @import "../core/_css3";
 @import "../core/_mixin";
 
-body{background-color: #3d3d3d; padding: 0;margin: 0;font-size: 13px;direction: ltr;color: #000;}
+body{background-color: #3d3d3d; padding: 0;margin: 0;font-size: 13px;direction: ltr;color: #000;font-family: $fontYaHei;}
+
+
 
 .page-container{margin-top:50px;}
-
 .page-sidebar{width: 225px; background-color: #3d3d3d;position: fixed;}
 ul.page-sidebar-menu>li>a{border-top:1px solid #5c5c5c;color: #fff;display: block;position: relative;padding: 10px 5px;text-decoration: none;font-size: 14px;font-weight: 300;}
 ul.page-sidebar-menu>li:hover>a{ background-color: #333;}
@@ -22,4 +23,7 @@ ul.page-sidebar-menu>li.active .selected{@include triangle(left,10px,#ffffff);po
 
 //page-content
 .page-content{margin-left: 225px;background-color: #fff;min-height: 760px;}
-.container-fluid{padding: 0 20px;}
+.container-fluid{padding: 0 20px;@extend %clearfix;}
+
+//article table class
+
