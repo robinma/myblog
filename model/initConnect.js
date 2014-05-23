@@ -11,6 +11,7 @@ var dburl = require("../config").db;
 //cononect database
 exports.connect = function(callback) {
 	var mongo=mongoose.connect(dburl);
+  if(typeof callback) callback();
 }
 
 exports.disconnect = function(callback) {
