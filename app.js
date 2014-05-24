@@ -63,10 +63,7 @@ app.use(function(err, req, res, next) {
 });
 
 
-initDB.connect(function(error){
-	console.log('start',error);
-	if(error) throw error;
-})
+var mongo=initDB.connect();
 
 app.on('close',function(errno){
 	initDB.disconnect(function(err){

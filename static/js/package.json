@@ -1,0 +1,11 @@
+{
+  "version":"0.0.1",
+  "name":"myblog",
+  "description":"javasript description",
+  "author":"robin ma",
+  "dependencies":{
+    "seajs":"~2.2.1",
+    "jquery":"~2.1.1",
+    "juicer":"~0.6.5"
+  }
+}
