@@ -6,11 +6,16 @@ html(lang="zh-cn")
     link(rel='stylesheet',href="/css/common/base.css")  
     link(rel='stylesheet',href="/bootstrap/css/bootstrap.min.css")
     link(rel='stylesheet',href="/css/fonts/awesome/font-awesome.css")
+    script(type="text/javascript", src="/js/node_modules/jquery/dist/cdn/jquery-2.1.1.min.js")
     block css
     block js
     body
       block content
 
       script(src="/bootstrap/js/bootstrap.min.js")
+      script(type="text/javascript", src="/js/node_modules/seajs/dist/sea.js")
+      script(type="text/javascript")
+        
+
       block footjs
 
