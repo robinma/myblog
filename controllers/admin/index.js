@@ -19,7 +19,11 @@ var login = function(req,res) {
   var postparam=req.body;
   var username=postparam['username'];
   var pwd=postparam['password'];
-  
+
+  model_user.superAdmin(username,pwd,function(info){
+    
+  });
+
   res.json({code:0});
 }
 
