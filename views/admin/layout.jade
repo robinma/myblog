@@ -14,9 +14,7 @@ html(lang="zh-cn")
 
       script(src="/bootstrap/js/bootstrap.min.js")
       script(type="text/javascript", src="/js/node_modules/seajs/dist/sea.js")
-      script(type="text/javascript") var version=function(){var a=new Date();return a.getYear()+a.getMonth()+a.getDay()}();
-
-        
+      script(type="text/javascript") var version=function(){var a=new Date();return a.getYear()+a.getMonth()+a.getDay()}();var seaconf={'map' : [[/^(.*\.(?:css|js))(.*)$/i,'$1?v=2014'+version]],alias : {}};seaconf.base='/';seajs.config(seaconf);seajs.use('js/admin/login');
 
       block footjs
 

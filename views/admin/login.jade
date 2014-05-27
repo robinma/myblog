@@ -9,7 +9,7 @@ block content
       h3.text-center.font-title 登录后台管理
       div.alert.alert-danger.hide
         p 输入用户密码有错，请重新输入
-      div.controls
+      div.controls(node-type="login-warp")
         div.input-group
           span.input-group-addon.fa-user
           input(type="text" class="form-control m-form-up" placeholder="username")
@@ -21,7 +21,7 @@ block content
             label
               input(type="checkbox")
               span 记住密码?
-          button(type="submit" class="btn btn-success pull-right m-login-btn") 登录 
+          button(type="button" class="btn btn-success pull-right m-login-btn" node-type="login-btn") 登录 
             span.fa-send
 
 

@@ -12,8 +12,8 @@ router.get('/login',function(req,res){
   res.render('admin/login',{})
 })
 
+//ajax login
 router.post('/login',function(req,res){
-  //res.render('admin/login',{})
   control.login(req,res);
   
 })
