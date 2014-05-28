@@ -4,6 +4,8 @@ var favicon = require('static-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var session = require('express-session');
+var expressvalidator = require('express-validator');
 
 var initDB=require('./model/initConnect');
 /*require router modules*/
@@ -23,10 +25,15 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(cookieParser());
+app.use(session({
+    secret:"keybord cat",
+    proxy:true,
+    cookie:{maxAge:1000*60*60}
+}));
+app.use(expressvalidator());
 app.use(express.static(path.join(__dirname, 'static')));
-//session
-app.use(express.cookieParser('stack admin manager'));
-app.use(express.session());
+
+
 //后期进行整理
 //set main router enter
 app.use('/', index);

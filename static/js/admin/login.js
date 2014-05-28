@@ -21,7 +21,11 @@ define(function(require, exports) {
     var uname=unobj.val(),pwd=pdobj.val();
     if(uname.length>0 && pwd.length>0){
       $.post('/admin/login',{username:uname,password:pwd},function(data){
-        console.log(data)
+        if(data.code == 1){
+          location.href = '/admin'
+        }else{
+          $el.find('div[node-type="tip"]').show().find('p').text(data.msg);
+        }
       })
     }
 

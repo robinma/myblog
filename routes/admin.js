@@ -1,11 +1,14 @@
 var express=require("express")
+var filter=require('../lib/filter');
 var router=express.Router()
 
 /*get admin index*/
 var control=require('../controllers/admin/index');
-router.get('/',function(req,res){
+
+router.get('/',filter.authorize,function(req,res){
 
   control.init(req,res);
+  
 });
 
 router.get('/login',function(req,res){
