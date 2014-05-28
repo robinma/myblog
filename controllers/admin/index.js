@@ -21,10 +21,15 @@ var login = function(req,res) {
   var pwd=postparam['password'];
 
   model_user.superAdmin(username,pwd,function(info){
-    
+    if(info.code ==1){
+
+      res.json(info);
+    }else if(info.code == 0){
+      res.json(info)
+    }
   });
 
-  res.json({code:0});
+  //res.json({code:0});
 }
 
 

@@ -32,8 +32,15 @@ exports.islogin=function(){
 };
 //
 exports.superAdmin=function(username,pwd,callback){
-  var result=User.find({},function(err,docs){
-    console.log(docs)
+  var result=User.find({"username":username},function(err,docs){
+    if(err){
+      throw err;
+    }
+    if(docs[0].password === pwd){
+      return callback({code:1,power:docs.power,msg:'success'});
+    }else{
+      return callback({code:0,msg:'faile'})
+    }
   });
 
 };

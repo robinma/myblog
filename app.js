@@ -24,6 +24,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'static')));
+//session
+app.use(express.cookieParser('stack admin manager'));
+app.use(express.session());
 //后期进行整理
 //set main router enter
 app.use('/', index);
