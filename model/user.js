@@ -5,7 +5,8 @@ var Schema = mongoose.Schema;
 
 
 //定义用户对象
-userSchema=new Schema({
+var userSchema=new Schema({
+  user_id:String,
   username:String,
   password:String,
   power:0             //0-100  100:super admin 50：普通admin 10：user 0:限制

@@ -11,6 +11,9 @@ define(function(require, exports) {
 
   var _todo=function(){
     $el=$('div[node-type="login-warp"]');
+    //auto focus
+    $el.find('input[type="text"]').focus();
+    
     $el.on('click','button[node-type="login-btn"]',function(){
       submit();
     })
