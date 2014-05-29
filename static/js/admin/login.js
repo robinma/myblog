@@ -13,6 +13,11 @@ define(function(require, exports) {
     $el=$('div[node-type="login-warp"]');
     $el.on('click','button[node-type="login-btn"]',function(){
       submit();
+    })
+    $(window).on('keydown',function(e){
+      if(e.keyCode == 13){
+        submit()
+      }
     });
   }
 
