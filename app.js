@@ -77,7 +77,7 @@ var mongo=initDB.connect();
 
 app.on('close',function(errno){
 	initDB.disconnect(function(err){
-		console.log('===',err);
+		console.log(err);
 		
 	});
 });
