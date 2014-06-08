@@ -10,6 +10,15 @@ router.get('/',filter.authorize,function(req,res){
   control.init(req,res);
 
 });
+//article list
+router.get('/article',function(req,res){
+
+});
+//add article list
+router.get('article/publish',function(){
+
+});
+
 
 router.get('/login',function(req,res){
 
