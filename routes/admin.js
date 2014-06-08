@@ -12,14 +12,14 @@ router.get('/',filter.authorize,function(req,res){
 });
 //article list
 router.get('/article',function(req,res){
-
+  control.init(req,res);
 });
 //add article list
-router.get('article/publish',function(){
-
+router.get('/article/publish',function(){
+  publish.apply(this,arguments)
 });
 
-
+//login page
 router.get('/login',function(req,res){
 
   res.render('admin/login',{})
@@ -31,5 +31,13 @@ router.post('/login',function(req,res){
   
 })
 
+//===================
+/**
+ * publish article
+ */
+
+var publish=function(req,res){
+  res.render('admin/publish',{});
+ }
 
 module.exports=router;

@@ -1,0 +1,39 @@
+extends _layout
+block css
+  link(rel="stylesheet", type="text/css", href="/css/admin/index.css")
+block content
+  //top nav bar
+  include _header
+  div.page-container
+    // left side
+    include _slideMenu
+    div.page-content
+      div.container-fluid 
+        //main jade tpl
+        div.page-header
+          h1 新建博文
+            small 这里创建新的博文
+        div.panel.panel-primary
+          div.panel-heading 博文字段
+          div.panel-body 在此输入文章信息
+          form.form-horizontal(role="form")
+            div.form-group
+              label.col-sm-2.control-label 标题
+              div.col-sm-6
+                input(type="text" class="form-control" placeholder="输入文章标题")
+            div.form-group
+              label.col-sm-2.control-label 副标题   
+              div.col-sm-6
+                input(type="text" class="form-control" placeholder="请输入副标题")
+            div.form-group
+              label.col-sm-2.control-label 分类   
+              div.col-sm-6
+                input(type="text" class="form-control" placeholder="请输入副标题") 
+            div.form-group
+              label.col-sm-2.control-label 文章简介
+              div.col-sm-6
+                input(type="text" class="form-control" placeholder="文章内容")
+            div.form-group
+              label.col-sm-2.control-label 正文
+              div.col-sm-6
+                input(type="text" class="form-control" placeholder="文章内容")

@@ -3,7 +3,6 @@ var model_user = require('../../model/user');
 
 //admin 入口
 var init = function(req, res) {
-  console.log('=-=-=-=-=-=-=-')
 
     res.render('admin/index', {});
 
