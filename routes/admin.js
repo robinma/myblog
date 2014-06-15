@@ -1,9 +1,17 @@
 var express=require("express")
 var filter=require('../lib/filter');
+var path = require('path');
 var router=express.Router()
 
+var getViewControl=function(router){
+  var views=express().get('views');
+    return require(path.join(views,router));
+}
+
+
+
 /*get admin index*/
-var control=require('../controllers/admin/index');
+var control=getViewControl('admin/index');
 
 router.get('/',filter.authorize,function(req,res){
 
@@ -14,10 +22,7 @@ router.get('/',filter.authorize,function(req,res){
 router.get('/article',function(req,res){
   control.init(req,res);
 });
-//add article list
-router.get('/article/publish',function(){
-  publish.apply(this,arguments)
-});
+
 
 //login page
 router.get('/login',function(req,res){
@@ -31,6 +36,14 @@ router.post('/login',function(req,res){
   
 })
 
+//add article list
+router.get('/article/publish',function(req,res){
+  publish.apply(this,arguments)
+});
+//ajax publish article
+router.post('/article/publish',function(req,res){
+  ajaxpublish.apply(this,arguments);
+})
 //===================
 /**
  * publish article
@@ -39,5 +52,11 @@ router.post('/login',function(req,res){
 var publish=function(req,res){
   res.render('admin/publish',{});
  }
+
+var ajaxpublish=function(req,res){
+    var publish = getViewControl('admin/publish');
+    console.log('publish ajaxpublish',publish)
+    publish.postArtucle(req,res);
+};
 
 module.exports=router;

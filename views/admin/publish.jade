@@ -20,29 +20,29 @@ block content
             div.form-group
               label.col-sm-2.control-label 标题
               div.col-sm-6
-                input(type="text" class="form-control" placeholder="输入文章标题")
+                input(type="text" class="form-control" name="title" placeholder="输入文章标题")
             div.form-group
               label.col-sm-2.control-label 副标题   
               div.col-sm-6
-                input(type="text" class="form-control" placeholder="请输入副标题")
+                input(type="text" class="form-control" name="subtitle" placeholder="请输入副标题")
             div.form-group
               label.col-sm-2.control-label 分类   
               div.col-sm-6
-                input(type="text" class="form-control" placeholder="请输入副标题") 
+                input(type="text" class="form-control" name="typeclass" placeholder="请选择分类") 
             div.form-group
               label.col-sm-2.control-label 文章简介
               div.col-sm-9
-                textarea.form-control(rows='4' placeholder="文章内容")
+                textarea.form-control(rows='4' name="intro" placeholder="文章内容")
             div.form-group
               label.col-sm-2.control-label 正文
               div.col-sm-9
-                textarea.form-control(rows='13' placeholder="文章内容")
+                textarea.form-control(rows='13' name="content" placeholder="文章内容")
             div.form-group
               label.col-sm-2.control-label
               div.col-sm-9
-                button.btn.btn-primary(type="button") 确认发布
+                button.btn.btn-primary(type="button" node-type="submit") 确认发布
 block footjs
-
+  script(type="text/javascript") seajs.use('js/admin/publish');
 
 
 

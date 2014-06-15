@@ -9,6 +9,7 @@ var Article = new Schema({
   title: String,                  //文章标题
   subtitle: String,               //副标题，英文
   intro: String,                  //简介
+  class:String,                   //文章分类
   content: String,                //conetent
   time: {type:Date,default:Date.now},                     //创建时间
   tags: Array,                    //标签
