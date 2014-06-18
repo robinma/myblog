@@ -55,7 +55,7 @@ var publish=function(req,res){
 
 var ajaxpublish=function(req,res){
     var publish = getViewControl('admin/publish');
-    console.log('publish ajaxpublish',publish)
+
     publish.postArtucle(req,res);
 };
 
