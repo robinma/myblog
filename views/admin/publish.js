@@ -7,6 +7,12 @@ exports.postArtucle = function(req, res) {
   var intro = req.params['intro'];
   var content = req.params['content'];
 
+  //verify
+  //....
+
+  //save data
+
+    
 
   res.json({
     code: 0
