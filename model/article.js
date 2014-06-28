@@ -12,14 +12,21 @@ var Article = new Schema({
   class:String,                   //文章分类
   content: String,                //conetent
   time: {type:Date,default:Date.now},                     //创建时间
-  tags: Array,                    //标签
+  tags: {type:Array,default:[]},                    //标签
   author: {type:String,default:'赤灵'},                 
   view: {type:Number,default:0},
   comment: {type:Number,default:0},
   like: {type:Number,default:0}
 });
 
+var mongoose.model('Article',Article);
 
+var Article=mongoose.model('Article');
+
+//sace data to article
+exports.saveArticle=function(){
+    
+}
 
 
 
