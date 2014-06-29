@@ -19,7 +19,7 @@ var Article = new Schema({
   like: {type:Number,default:0}
 });
 
-var mongoose.model('Article',Article);
+mongoose.model('Article',Article);
 
 var Article=mongoose.model('Article');
 
