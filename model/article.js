@@ -23,8 +23,8 @@ mongoose.model('Article',Article);
 
 var Article=mongoose.model('Article');
 
-//sace data to article
-exports.saveArticle=function(){
+//save data to article
+exports.saveArticle=function(req,callback){
     
 }
 

@@ -5,13 +5,12 @@ var _=require('../../node_modules/underscore');
 
 exports.postArtucle = function(req, res) {
 
+  var title = req.body['title'];
+  var subtitle = req.body['subtitle'];
+  var typeclass = req.body['typeclass'];
+  var intro = req.body['intro'];
+  var content = req.body['content'];
 
-  var title = req.params['title'];
-  var subtitle = req.params['subtitle'];
-  var typeclass = req.params['typeclass'];
-  var intro = req.params['intro'];
-  var content = req.params['content'];
-  console.log(req)
 
   //verify
   //....
@@ -32,14 +31,20 @@ exports.postArtucle = function(req, res) {
   }
   //save data
 
+  model_article.saveArticle(req,function(err,data){
+
+  });
+
   res.json(succJson('保存成功'))
+
 
 }
 
+//return mistake data
 var errJson=function(msg){
   return {code:0,msg:msg}
 }
-
+//return right data
 var succJson=function(msg){
   return {code:1,msg:msg}
 }
