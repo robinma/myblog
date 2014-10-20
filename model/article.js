@@ -1,32 +1,32 @@
-var db = require('./initConnect');
+// var db = require('./initConnect');
 
-var mongoose = db.getMongoose();
-var Schema = mongoose.Schema;
+// var mongoose = db.getMongoose();
+// var Schema = mongoose.Schema;
 
-//定义对像格式
-var Article = new Schema({
-  id: String,
-  title: String,                  //文章标题
-  subtitle: String,               //副标题，英文
-  intro: String,                  //简介
-  class:String,                   //文章分类
-  content: String,                //conetent
-  time: {type:Date,default:Date.now},                     //创建时间
-  tags: {type:Array,default:[]},                    //标签
-  author: {type:String,default:'赤灵'},                 
-  view: {type:Number,default:0},
-  comment: {type:Number,default:0},
-  like: {type:Number,default:0}
-});
+// //定义对像格式
+// var Article = new Schema({
+//   id: String,
+//   title: String,                  //文章标题
+//   subtitle: String,               //副标题，英文
+//   intro: String,                  //简介
+//   class:String,                   //文章分类
+//   content: String,                //conetent
+//   time: {type:Date,default:Date.now},                     //创建时间
+//   tags: {type:Array,default:[]},                    //标签
+//   author: {type:String,default:'赤灵'},                 
+//   view: {type:Number,default:0},
+//   comment: {type:Number,default:0},
+//   like: {type:Number,default:0}
+// });
 
-mongoose.model('Article',Article);
+// mongoose.model('Article',Article);
 
-var Article=mongoose.model('Article');
+// var Article=mongoose.model('Article');
 
-//save data to article
-exports.saveArticle=function(req,callback){
+// //save data to article
+// exports.saveArticle=function(req,callback){
     
-}
+// }
 
 
 

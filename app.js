@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 var expressvalidator = require('express-validator');
 
-var initDB=require('./model/initConnect');
+// var initDB=require('./model/initConnect');
 /*require router modules*/
 var index = require('./routes/index');
 var users = require('./routes/users');
@@ -73,14 +73,5 @@ app.use(function(err, req, res, next) {
     });
 });
 
-
-var mongo=initDB.connect();
-
-app.on('close',function(errno){
-	initDB.disconnect(function(err){
-		console.log(err);
-		
-	});
-});
 
 module.exports = app;
