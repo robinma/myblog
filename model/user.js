@@ -1,4 +1,4 @@
-// var db = require('./initConnect');
+var db = require('./initConnect');
 
 // var mongoose = db.getMongoose();
 // var Schema = mongoose.Schema;
@@ -54,3 +54,6 @@
 //   });
 
 // };
+
+
+

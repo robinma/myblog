@@ -27,3 +27,11 @@
 // exports.getMongoose=function(){
 //   return mongoose;
 // }
+
+ const appId = 'kvnt0him31pzphgl307qc73l66001ypcisbqqyk0n2f5oumu';
+ const appKey = 'zz5mrk0pvx3kgrauzmttwp9t4xsf0kmsccqxq1zhp7dto68r';
+ const masterKey = 'zz5mrk0pvx3kgrauzmttwp9t4xsf0kmsccqxq1zhp7dto68r';
+
+require("../lib/av");
+
+av.initialize(appId,appKey,masterKey);
