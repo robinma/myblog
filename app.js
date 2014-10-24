@@ -42,6 +42,7 @@ app.use(express.static(path.join(__dirname, 'static')));
 // app.use('/users', users);
 // app.use('/blogs/',blogs);
 // app.use('/admin/',admin);
+routes(app);
 
 /// catch 404 and forwarding to error handler
 app.use(function(req, res, next) {
@@ -74,6 +75,5 @@ app.use(function(err, req, res, next) {
     });
 });
 
-routes(app);
 
 module.exports = app;

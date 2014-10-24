@@ -17,11 +17,12 @@
 module.exports = function(app){
 	//进入首页
 	app.get('/',function(req,res){
-		dsconsole.log('param','/')
 		res.render('index', '');
 	});
+	
 	//进入blog首页
-	app.get('/blogs',function(){
+	app.get('/blogs',function(req,res){
+
 		res.render('blogs/index',{});
 	});
 
