@@ -1,4 +1,5 @@
 var express = require('express');
+var routes = require('./routes');
 var path = require('path');
 var favicon = require('static-favicon');
 var logger = require('morgan');
@@ -9,10 +10,10 @@ var expressvalidator = require('express-validator');
 
 // var initDB=require('./model/initConnect');
 /*require router modules*/
-var index = require('./routes/index');
-var users = require('./routes/users');
-var blogs=require('./routes/blogs');
-var admin=require('./routes/admin')
+// var index = require('./routes/index');
+// var users = require('./routes/users');
+// var blogs=require('./routes/blogs');
+// var admin=require('./routes/admin')
 
 var app = express();
 
@@ -37,10 +38,10 @@ app.use(express.static(path.join(__dirname, 'static')));
 
 //后期进行整理
 //set main router enter
-app.use('/', index);
-app.use('/users', users);
-app.use('/blogs/',blogs);
-app.use('/admin/',admin);
+// app.use('/', index);
+// app.use('/users', users);
+// app.use('/blogs/',blogs);
+// app.use('/admin/',admin);
 
 /// catch 404 and forwarding to error handler
 app.use(function(req, res, next) {
@@ -73,5 +74,6 @@ app.use(function(err, req, res, next) {
     });
 });
 
+routes(app);
 
 module.exports = app;
