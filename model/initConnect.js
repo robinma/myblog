@@ -28,10 +28,15 @@
 //   return mongoose;
 // }
 
+/**
+ *连接 avos 
+ */
+var AV = require('avoscloud-sdk').AV;
+
  const appId = 'kvnt0him31pzphgl307qc73l66001ypcisbqqyk0n2f5oumu';
  const appKey = 'zz5mrk0pvx3kgrauzmttwp9t4xsf0kmsccqxq1zhp7dto68r';
  const masterKey = 'zz5mrk0pvx3kgrauzmttwp9t4xsf0kmsccqxq1zhp7dto68r';
 
-require("../lib/av");
+AV.initialize(appId,appKey,masterKey);
 
-av.initialize(appId,appKey,masterKey);
+exports.AV;
