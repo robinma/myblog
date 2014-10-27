@@ -27,5 +27,12 @@ module.exports = function(app){
 	});
 
 
+  //================
+  // 后台管理
+  //================
+
+  app.get('/admin',function(req,res){
+    res.render('admin/index',{})
+  });
 
 };
