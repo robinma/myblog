@@ -1,0 +1,30 @@
+extends _layout
+block css
+  link(rel="stylesheet", type="text/css", href="/css/admin/login.css")
+block content
+  div.logo
+    span 风的沙子--注册用户
+  div.content
+    form.form-horizontal(role="form")
+      div.alert.alert-danger.hide(node-type="tip")
+        p 输入用户密码有错，请重新输入
+      div.controls(node-type="login-warp")
+        div.input-group
+          span.input-group-addon.fa-user
+          input(type="text" class="form-control m-form-up" placeholder="username")
+        div.input-group
+          span.input-group-addon.fa-lock
+          input(type="password" class="form-control" placeholder="password")
+        div.input-group
+          span.input-group-addon.fa-lock
+          input(type="password" class="form-control" placeholder="repassword")
+        div.input-group
+          span.input-group-addon.fa-pencil
+          input(type="email" class="form-control" placeholder="email")
+        div.form-actions
+          div.checkbox
+          button(type="button" class="btn btn-success pull-right m-login-btn" node-type="login-btn") 注册 
+            span.fa-send
+block footjs
+  script(type="text/javascript") seajs.use('js/admin/reg');
+

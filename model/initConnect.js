@@ -39,4 +39,4 @@ var AV = require('avoscloud-sdk').AV;
 
 AV.initialize(appId,appKey,masterKey);
 
-exports.AV;
+module.exports = AV;

@@ -1,4 +1,4 @@
-var db = require('./initConnect');
+var AV = require('./initConnect');
 
 // var mongoose = db.getMongoose();
 // var Schema = mongoose.Schema;
@@ -54,6 +54,53 @@ var db = require('./initConnect');
 //   });
 
 // };
+//create AV.object 实例
+var AV_User = AV.Object.extend("User");
 
+
+function User(user){
+	this.name = user.name;
+	this.password = user.password;
+	this.email = user.email;
+};
+
+module.exports = User;
+
+//存储用户信息
+User.prototype.save = function(callback) {
+	//要存入数据库的用户文档
+	var user = {
+		name:this.name,
+		password : this.password,
+		email : this.email
+	};
+
+	//保存user数据
+	var avUser = new AV_User();
+	avUser.save(user,{
+		success:function(avuser){
+			console.log('save success');
+			callback(false,avuser);
+		},
+		error:function(avuser,error){
+			console.log('save error');
+			callback(error,avuser);
+		}
+	})
+};
+
+//读取用户信息
+User.prototype.get = function(name,callback){
+	var query = new AV.Query(AV_User);
+	query.get({name:name},{
+		success:function(avUser){
+			callback(false,avUser);
+		},
+		error:function(object,error){
+			callback(error,object);
+		}
+	});
+
+}
 
 

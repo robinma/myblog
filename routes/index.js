@@ -13,6 +13,7 @@
 
 // module.exports = router;
 
+var User = require('../model/user');
 
 module.exports = function(app){
 	//进入首页
@@ -30,9 +31,17 @@ module.exports = function(app){
   //================
   // 后台管理
   //================
-
+  //后台入口
   app.get('/admin',function(req,res){
     res.render('admin/index',{})
+  });
+  //登录
+  app.get('/admin/login',function(req,res){
+  	res.render('admin/login',{})
+  });
+  //注册
+  app.get('/admin/reg',function(req,res){
+  	res.render('admin/reg',{});
   });
 
 };
