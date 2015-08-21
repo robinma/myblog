@@ -1,79 +1,29 @@
-var express = require('express');
-var routes = require('./routes');
+'use strict';
+var messages = require('./controllers/messages');
+var compress = require('koa-compress');
+var logger = require('koa-logger');
+var serve = require('koa-static');
+var route = require('koa-route');
+var koa = require('koa');
 var path = require('path');
-var favicon = require('static-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
-var session = require('express-session');
-var expressvalidator = require('express-validator');
+var app = module.exports = koa();
 
-// var initDB=require('./model/initConnect');
-/*require router modules*/
-// var index = require('./routes/index');
-// var users = require('./routes/users');
-// var blogs=require('./routes/blogs');
-// var admin=require('./routes/admin')
+// Logger
+app.use(logger());
 
-var app = express();
+app.use(route.get('/', messages.home));
+app.use(route.get('/messages', messages.list));
+app.use(route.get('/messages/:id', messages.fetch));
+app.use(route.post('/messages', messages.create));
+app.use(route.get('/async', messages.delay));
 
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+// Serve static files
+app.use(serve(path.join(__dirname, 'public')));
 
+// Compress
+app.use(compress());
 
-app.use(favicon());
-app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded());
-app.use(cookieParser());
-app.use(session({
-    secret:"keybord cat",
-    proxy:true,
-    cookie:{maxAge:1000*60*60}
-}));
-app.use(expressvalidator());
-app.use(express.static(path.join(__dirname, 'static')));
-
-
-//后期进行整理
-//set main router enter
-// app.use('/', index);
-// app.use('/users', users);
-// app.use('/blogs/',blogs);
-// app.use('/admin/',admin);
-routes(app);
-
-/// catch 404 and forwarding to error handler
-app.use(function(req, res, next) {
-    var err = new Error('Not Found');
-    err.status = 404;
-    next(err);
-});
-
-/// error handlers
-
-// development error handler
-// will print stacktrace
-if (app.get('env') === 'development') {
-    app.use(function(err, req, res, next) {
-        res.status(err.status || 500);
-        res.render('error', {
-            message: err.message,
-            error: err
-        });
-    });
+if (!module.parent) {
+  app.listen(3000);
+  console.log('listening on port 3000');
 }
-
-// production error handler
-// no stacktraces leaked to user
-app.use(function(err, req, res, next) {
-    res.status(err.status || 500);
-    res.render('error', {
-        message: err.message,
-        error: {}
-    });
-});
-
-
-module.exports = app;
